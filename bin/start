@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/environment.rb'
+
+
+#API.get_data
+
+cli = CLI.new
+cli.intro
