@@ -5,7 +5,8 @@ class CLI
         puts "Hello there, Welcome to REST_Countries"
         puts "Please select a country you would like to learn more about 
         from the list provided." 
-        API.get_data 
+        #API.get_data 
+        binding.pry
         country_name
         #selection(user_response)
         country_facts
@@ -31,15 +32,10 @@ class CLI
     end
 
     def country_name
-        ["United States", "Nigeria", "Argentina", 
-        "Italy", "United Kingdom"].each.with_index(1) do |country, i|
-            puts "#{i}. #{country}"
+        Country.all.each.with_index(1) do |country, i|
+        puts "#{i}. #{country}"
         end
     end
-
-        # Country.all.each.with_index(1) do |country, i|
-        #     puts ""
-        # puts "#{i}. #{country.full_name}"
        
 
     def country_facts
@@ -47,15 +43,15 @@ class CLI
         choice = user_response
 
         puts "#{choice}"
-        #country = Country.locate_country(choice)
+        country = Country.locate_country(choice)
         #country_information(country)    
     end 
 
     def country_information(country)
-        puts "full_name: #{country.full_name}"
-        puts "native_name: #{country.native_name}"
-        puts "code: #{country.code}"
-        puts "language: #{country.language}"
+        puts "Full_name: #{country.full_name}"
+        puts "NativeName: #{country.nativeName}"
+        puts "Code: #{country.code}"
+        puts "Language: #{country.language}"
         selection
     end 
 
