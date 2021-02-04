@@ -5,8 +5,8 @@ class CLI
         puts "Hello there, Welcome to REST_Countries"
         puts "Please select a country you would like to learn more about 
         from the list provided." 
-        #API.get_data 
-        binding.pry
+        API.get_data 
+        #binding.pry
         country_name
         #selection(user_response)
         country_facts
@@ -42,9 +42,8 @@ class CLI
 
         choice = user_response
 
-        puts "#{choice}"
         country = Country.locate_country(choice)
-        #country_information(country)    
+        country_information(country)    
     end 
 
     def country_information(country)
