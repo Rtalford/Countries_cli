@@ -1,13 +1,14 @@
 class Country
 
-    attr_accessor :full_name, :native_name, :code, :language
+    attr_accessor :full_name, :nativeName, :code, :language
 
     @@all = []
 
     def initialize(country_hash)
-        country_hash.each do |k, v|
-            self.send("#{k}=", v)
-        end
+       country_hash.each do |k, v|
+        self.send("#{k}=", v)
+       end
+        save
     end
 
     def save 
@@ -24,5 +25,14 @@ class Country
         end
     end
 
-
 end 
+
+
+
+# country_array.each do |country|
+    #     Country.new(country["full_name"], country["native_name"], 
+    #     country["code"], country["language"])
+    #end
+
+        #full_name, native_name, code, language
+

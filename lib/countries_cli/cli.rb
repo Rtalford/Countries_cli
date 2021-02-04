@@ -6,7 +6,6 @@ class CLI
         puts "Please select a country you would like to learn more about 
         from the list provided." 
         API.get_data 
-        #binding.pry
         country_name
         #selection(user_response)
         country_facts
