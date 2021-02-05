@@ -2,45 +2,83 @@ class CLI
 
     def intro 
         greeting 
+        #API.get_data
+        countries = Api.get_countries()
+        input = nil 
+        while input != "exit"
+          puts country_name
+          puts "Please select a country by the number"
+          input = gets.strip
+          if input.to_i >= 1 && input.to_i <= Country.all.length 
+            country = countries[input.to_i - 1]
+            more_info 
+          else 
+            error 
+          end 
+        end
+      end 
+      
 
     end 
 
     def greeting 
-        puts "Hello there, Welcome to REST_Countries"
-        puts "Please select a country you would like to learn more about 
-        from the list provided." 
+        puts "Hello there, Welcome to REST_Countries." 
+        puts "Please select a country you would like to learn more about from the list provided."
     end 
 
-    def goodbye
-                puts "Thank you for choosing our website to learn about different countries. We hope to see you soon"
-            end 
-        
-            def error
-                puts "That is an invalid entry. Please try again."
-                selection
-            end 
-        
-            def selection 
-                choice = user_response
+    def country_name
+        Country.all.each.with_index(1) do |country, i|
+        puts "#{i}. #{country}"
+        end
+    end
                
         
-                if choice == 'next'
-                   puts "Please select a new country from a list provided or 'no' 
-                   to exit the website "
-                   country_name
-                   selection 
+    def country_facts
+        
+        choice = user_response
+        
+        country = Country.locate_country(choice)
+        country_information(country)    
+    end 
+        
+    def country_information(country)
+        puts "Full_name: #{country.full_name}"
+        puts "NativeName: #{country.nativeName}"
+        puts "Code: #{country.code}"
+        puts "Language: #{country.language}"
+        selection
+    end 
+        
+           
+    def goodbye
+        puts "Thank you for choosing our website to learn about different countries. We hope to see you soon"
+    end 
+        
+    def error
+        puts "That is an invalid entry. Please try again."
+        selection
+    end 
+        
+    def selection 
+        choice = user_response
+               
+        
+        if choice == 'more info'
+            puts "Please type 'more info' or 'no' to exit website"
+            country_name
+            selection 
                    
-                elsif choice == 'no'
-                    goodbye
-                else 
-                    error
-        
-                end
-        
-            end 
-        end 
-        
+        elsif choice == 'no'
+            goodbye
 
+        elsif choice == 'no'
+        else 
+            error
+            selection
+        
+        end       
+    end 
+    
 end 
 
 
