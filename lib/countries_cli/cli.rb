@@ -3,14 +3,14 @@ class CLI
     def intro 
         greeting 
         #API.get_data
-        country = Api.get_country()
+        country = API.get_data #Api.get_country()  
         input = nil 
         while input != "exit"
             puts country_name
             puts "Please select a country by the number"
             input = gets.strip
         if input.to_i >= 1 && input.to_i <= Country.all.length 
-            country = countries[input.to_i - 1]
+            country = country[input.to_i - 1]
             more_info 
         else 
             error 
