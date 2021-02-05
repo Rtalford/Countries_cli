@@ -7,11 +7,10 @@ class CLI
         from the list provided." 
         #API.get_data 
         country_name
-        #selection(user_response)
         country_facts
         app_response
-        selection(user_response)
-        app_response
+      
+           
     end 
 
     def user_response
@@ -53,7 +52,6 @@ class CLI
         selection
     end 
 
-   
 
     def goodbye
         puts "Thank you for choosing our website to learn about different countries. We hope to see you soon"
@@ -73,13 +71,10 @@ class CLI
            to exit the website "
            country_name
            selection(user_response)
-           app_response
-           country_facts
-           #selection 
+           country_data
 
-        #elseif choice == 'next'
-
-           
+        elsif choice 
+       
         elsif choice == 'no'
             goodbye
         else 
@@ -88,4 +83,6 @@ class CLI
         end
 
     end 
+
+
 end 
