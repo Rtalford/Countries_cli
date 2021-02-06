@@ -1,14 +1,13 @@
 class Country
 
-    attr_accessor :full_name, :native_name, :code, :language
+    attr_accessor :full_name, :nativeNname, :code, :language
 
     @@all = []
 
-    def initialize(full_name, native_name, code, language)
-       @full_name = full_name 
-       @native_name = native_name
-       @code = code
-       @language = language
+    def initialize(country_hash)
+        country_hash.each do |k, v|
+        self.send("#{k}=", v) if self.respond
+        end
         save
     end
 
