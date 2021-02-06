@@ -6,6 +6,7 @@ class CLI
         puts "Please select a country you would like to learn more about 
         from the list provided." 
         API.get_data 
+        binding.pry
         country_name
         country_facts
         app_response
@@ -24,16 +25,16 @@ class CLI
     end
 
     def country_name
-        ["United States", "Nigeria", "Argentina", 
-        "Italy", "United Kingdom"].each.with_index(1) do |country, i|
-            puts "#{i}. #{country}"
-        end
+
+        Country.all.each.with_index(1) do |country, i|
+            puts ""
+        puts "#{i}. #{country.full_name.name}"
+        end 
     end
 
-        # Country.all.each.with_index(1) do |country, i|
-        #     puts ""
-        # puts "#{i}. #{country.full_name}"
-       
+   # ["United States", "Nigeria", "Argentina", 
+    #"Italy", "United Kingdom"].each.with_index(1) do |country, i|
+     #   puts "#{i}. #{country}"
 
     def country_facts
 
