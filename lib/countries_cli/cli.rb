@@ -5,7 +5,7 @@ class CLI
         puts "Hello there, Welcome to REST_Countries"
         puts "Please select a country you would like to learn more about 
         from the list provided." 
-        #API.get_data 
+        API.get_data 
         country_name
         country_facts
         app_response
@@ -18,7 +18,7 @@ class CLI
     end 
 
     def app_response
-        puts "Type 'next' to continue, 'no' 
+        puts "Type 'next' to continue and view more countries or 'no' 
         to exit the website."
         selection
     end
@@ -73,7 +73,7 @@ class CLI
            selection(user_response)
            country_data
 
-        elsif choice 
+        #elsif choice 
        
         elsif choice == 'no'
             goodbye
