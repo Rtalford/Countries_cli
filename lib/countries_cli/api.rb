@@ -8,7 +8,7 @@
     country_array.each do |country|
       Country.new(country)
     end
-   
+   Country.all
   end
     
 

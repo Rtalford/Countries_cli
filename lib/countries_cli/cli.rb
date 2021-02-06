@@ -5,7 +5,7 @@ class CLI
         puts "Hello there, Welcome to REST_Countries"
         puts "Please select a country you would like to learn more about 
         from the list provided." 
-        API.get_data 
+        countries = API.get_data 
         binding.pry
         country_name
         country_facts
@@ -25,24 +25,20 @@ class CLI
     end
 
     def country_name
-
         Country.all.each.with_index(1) do |country, i|
             puts ""
-        puts "#{i}. #{country.full_name.name}"
+        puts "#{i}. #{country.full_name}"
         end 
     end
 
-   # ["United States", "Nigeria", "Argentina", 
-    #"Italy", "United Kingdom"].each.with_index(1) do |country, i|
-     #   puts "#{i}. #{country}"
+   
 
     def country_facts
 
         choice = user_response
-
-        puts "#{choice}"
-        #country = Country.locate_country(choice)
-        #country_information(country)    
+       
+        country = Country.locate_country(choice)
+        country_information(country)    
     end 
 
     def country_information(country)
@@ -71,8 +67,9 @@ class CLI
            puts "Please select a new country from a list provided or 'no' 
            to exit the website "
            country_name
-           selection(user_response)
-           country_data
+           country_facts
+           app_response
+           
 
         #elsif choice 
        
