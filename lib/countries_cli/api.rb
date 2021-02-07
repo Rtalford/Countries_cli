@@ -6,7 +6,15 @@
     #create a variable)
     country_array = JSON.parse(response)#["name"]
     country_array.each do |country|
-      Country.new(country)
+      country_info = {
+      name: country["name"],
+      capital: country["capital"],
+      region: country["region"],
+      subregion: country["subregion"],
+      population: country["population"],
+     currency: country["currencies].first["name"]
+     } 
+     Country.new(country)
     end
    Country.all
   end

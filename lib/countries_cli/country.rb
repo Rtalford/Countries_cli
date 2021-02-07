@@ -2,7 +2,7 @@ require 'pry'
 
 class Country
 
-    attr_accessor :full_name, :nativeName, :code, :language
+    attr_accessor :name, :capital, :region, :subregion, :population, :currency
 
     @@all = []
 
@@ -23,9 +23,9 @@ class Country
 
     def self.locate_country(country_name)
         @@all.each.detect do |country| 
-            country.full_name == country_name
+            country.name == country_name
             binding.pry
-            #country.full_name == country_name
+            
         end
     end
 

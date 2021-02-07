@@ -9,9 +9,7 @@ class CLI
         binding.pry
         country_name
         country_facts
-        app_response
-      
-           
+        app_response     
     end 
 
     def user_response
@@ -24,14 +22,13 @@ class CLI
         selection
     end
 
-    def country_name
+    def country_name(name, capital, region, subregion, population, currency)
         Country.all.each.with_index(1) do |country, i|
             puts ""
-        puts "#{i}. #{country.full_name}"
+        puts "#{i}. #{country.name}"
         end 
     end
 
-   
 
     def country_facts
 
