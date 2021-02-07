@@ -21,12 +21,13 @@ class Country
         @@all
     end
 
-    def self.locate_country(country_name)
-        @@all.each.detect do |country| 
-            country.name == country_name
-            binding.pry
+    def self.locate_country(index)
+        #binding.pry
+         @@all[index.to_i-1]
+        # @@all.each.detect do |country| 
+        #     country.name == country_name     
             
-        end
+        # end
     end
 
 end 
