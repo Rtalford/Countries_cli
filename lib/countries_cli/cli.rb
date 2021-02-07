@@ -6,7 +6,7 @@ class CLI
         puts "Please select a country you would like to learn more about 
         from the list provided." 
         countries = API.get_data 
-        binding.pry
+        #binding.pry
         country_name
         country_facts
         app_response     
@@ -22,7 +22,7 @@ class CLI
         selection
     end
 
-    def country_name(name, capital, region, subregion, population, currency)
+    def country_name(name, capital, region, subregion, population)
         Country.all.each.with_index(1) do |country, i|
             puts ""
         puts "#{i}. #{country.name}"
@@ -39,10 +39,11 @@ class CLI
     end 
 
     def country_information(country)
-        puts "full_name: #{country.full_name}"
-        puts "native_name: #{country.native_name}"
-        puts "code: #{country.code}"
-        puts "language: #{country.language}"
+        puts "name: #{country.name}"
+        puts "capital: #{country.capital}"
+        puts "region: #{country.region}"
+        puts "subregion: #{country.subregion}"
+        puts "population: #{country.population}"
         selection
     end 
 

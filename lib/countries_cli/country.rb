@@ -2,7 +2,7 @@ require 'pry'
 
 class Country
 
-    attr_accessor :name, :capital, :region, :subregion, :population, :currency
+    attr_accessor :name, :capital, :region, :subregion, :population
 
     @@all = []
 

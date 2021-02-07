@@ -12,8 +12,7 @@
       region: country["region"],
       subregion: country["subregion"],
       population: country["population"],
-     currency: country["currencies].first["name"]
-     } 
+    } 
      Country.new(country)
     end
    Country.all
