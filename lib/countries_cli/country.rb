@@ -22,12 +22,7 @@ class Country
     end
 
     def self.locate_country(index)
-        #binding.pry
          @@all[index.to_i-1]
-        # @@all.each.detect do |country| 
-        #     country.name == country_name     
-            
-        # end
     end
 
 end 
